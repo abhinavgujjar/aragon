@@ -5,8 +5,7 @@
 (function (index, $) {
 	'use strict';
 
-	var signinUrl = 'https://www.tydy.it/app/api.login';
-
+	
 	index.vm = {
 		showError: ko.observable(false),
 		token: ko.observable(''),

@@ -6,10 +6,8 @@
 	router.app = Sammy('body', function () {
 
 		var that = this;
-		var $index = $('#main-page');
-		var $listings = $('#listing-page');
-		var $app = $('#app-page');
-		var $log = $('#log-page');
+		var $main = $('#main-page');
+		var $login = $('#login-page');
 
 		function swapPages(oldPage, newPage) {
 			newPage.show();
@@ -22,54 +20,22 @@
 		var routes = [{
 			path: '#/',
 			callback: function (i) {
-				$index.show();
-				$listings.hide();
-				$app.hide();
-				$log.hide();
+				$login.show();
+				$main.hide();
+				
 				//swapPages($listings, $index);
 			}
 		},
 		{
-			path: '#/listing',
+			path: '#/main',
 			callback: function (i) {
-				$index.hide();
-				$listings.show();
-				$app.hide();
-				$log.hide();
+				$login.hide();
+				$main.show();
+				
 
 				//clean out the app div
 				//$('#appContainer').empty();
 				//swapPages($index, $listings);
-			}
-		},
-		{
-			path: '#/app/:appId',
-			callback: function (i) {
-				$index.hide();
-				$listings.hide();
-				$app.show();
-				$log.hide();
-
-				var appId = this.params['appId'];
-
-				var appListing = JSON.parse(window.localStorage.getItem('listing'));
-
-				var appEntry = $.grep(appListing.result, function(item, index){
-					return item.id === appId;
-				})[0];
-
-				window.applisting.vm.loadApp(appEntry);
-				//swapPages($listings, $app);
-			}
-		},
-		{
-			path: '#/log',
-			callback: function (i) {
-				$index.hide();
-				$listings.hide();
-				$app.hide();
-				$log.show();
-				//swapPages($listings, $app);
 			}
 		}];
 
@@ -79,19 +45,11 @@
 	});
 
 	router.init = function () {
-		var companyId = window.localStorage.getItem('companyId');
-
-		var initialRoute = '#/';
-
-		if ( companyId !== null && companyId !== undefined && companyId > 0){
-			initialRoute = '#/listing';
-		}
-
 		router.app._checkFormSubmission = function () {
 			return false;
 		};
     
-		router.app.run(initialRoute);
+		router.app.run("#/");
 	};
 
 })(window.router = window.router || {}, $);
