@@ -3,7 +3,7 @@
         xmlns:gap="http://phonegap.com/ns/1.0"
         id="com.tabletty.tydy"
         version="1.0.0">
-  <name>Tydy</name>
+  <name>Aragon</name>
 
   <description>
     The Tydy App
@@ -48,32 +48,32 @@
   <access origin="*" subdomains="true" />
   
   <!-- Icons -->
-  <icon src="img/tydy-logo-white3.png" />
+  <icon src="img/Titan_Quest.png" />
   <!-- must be named this -->
 
   <!-- iOS -->
-  <icon src="img/icon.png"
+  <icon src="img/Titan_Quest.png"
         width="57"
         height="57" />
-  <icon src="img/icon.png"
+  <icon src="img/Titan_Quest.png"
         gap:platform="ios"
         width="72"
         height="72" />
-  <icon src="img/icon.png"
+  <icon src="img/Titan_Quest.png"
         width="114"
         height="114" />
 
   <!-- Android -->
-  <icon src="img/icons/android/logo_36.png"
+  <icon src="img/icons/android/Titan_Quest.png"
         gap:platform="android"
         gap:density="ldpi" />
-  <icon src="img/icons/android/logo_48.png"
+  <icon src="img/icons/android/Titan_Quest.png"
         gap:platform="android"
         gap:density="mdpi" />
-  <icon src="img/icons/android/logo_72.png"
+  <icon src="img/icons/android/Titan_Quest.png"
         gap:platform="android"
         gap:density="hdpi" />
-  <icon src="img/icons/android/logo_96.png"
+  <icon src="img/icons/android/Titan_Quest.png"
         gap:platform="android"
         gap:density="xhdpi" />
 
