@@ -9,6 +9,7 @@
 		var $landing = $('#landing-page');
 		var $login = $('#login-page');
 		var $module = $('#module-page');
+		var $video = $('#video-page');
 
 		var routes = [
 		{
@@ -27,6 +28,16 @@
 				$login.hide();
 				$landing.show();
 				$module.hide();
+				
+				//swapPages($listings, $index);
+			}
+		},
+		{
+			path: '#/video',
+			callback: function (i) {
+				$login.hide();
+				$landing.hide();
+				$video.show();
 				
 				//swapPages($listings, $index);
 			}
