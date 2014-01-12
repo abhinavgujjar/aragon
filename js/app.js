@@ -22,6 +22,7 @@
 		if (window.index) index.init();
 		if (window.router) router.init();
 		if (window.landing) landing.init();
+		if (window.learningModule) learningModule.init();
 
 		$('.back-button').on('click', function () {
 			window.history.go(-1);

@@ -13,31 +13,31 @@
 			topics: [
 			{
 				name: 'What do i learn about this topic?',
-				subTopics:[
+				subTopics: [
 				{
 					id : 1,
 					name: 'Introduction',
-					video: '1.mp4'
+					video: './videos/1.mp4'
 				},
 				{
 					id : 2,
 					name: 'Terminologies',
-					video: '2.mp4'
+					video: './videos/2.mp4'
 				},
 				{
 					id : 2,
 					name: 'Activities',
-					video: '2.mp4'
+					video: './videos/3.mp4'
 				},
 				{
 					id : 2,
 					name: 'A Discussion',
-					video: '2.mp4'
+					video: './videos/4.mp4'
 				},
 				{
 					id : 2,
 					name: 'Summary',
-					video: '2.mp4'
+					video: './videos/2.mp4'
 				}]
 			},
 			{
@@ -50,25 +50,25 @@
 				},
 				{
 					id : 2,
-					name: 'Terminologies',
+					name: 'Ground Rules',
 					video: '2.mp4'
 				},
 				{
 					id : 2,
-					name: 'Activities',
+					name: 'Energizer',
 					video: '2.mp4'
 				},
 				{
 					id : 2,
-					name: 'A Discussion',
+					name: 'Objectives',
 					video: '2.mp4'
 				},
 				{
 					id : 2,
-					name: 'Summary',
+					name: 'Terms',
 					video: '2.mp4'
 				}]
-			}
+			}]
 		},
 		{
 			id: 2,

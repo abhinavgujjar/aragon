@@ -41,6 +41,8 @@
 				var groupId = this.params.groupId;
 				var moduleId = this.params.moduleId;
 
+				learningModule.load(groupId, moduleId);
+
 				//swapPages($listings, $app);
 			}
 		},
