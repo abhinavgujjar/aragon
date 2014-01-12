@@ -17,27 +17,27 @@
 				{
 					id : 1,
 					name: 'Introduction',
-					video: './videos/1.mp4'
+					video: '1.mp4'
 				},
 				{
 					id : 2,
 					name: 'Terminologies',
-					video: './videos/2.mp4'
+					video: '2.mp4'
 				},
 				{
 					id : 2,
 					name: 'Activities',
-					video: './videos/3.mp4'
+					video: '3.mp4'
 				},
 				{
 					id : 2,
 					name: 'A Discussion',
-					video: './videos/4.mp4'
+					video: '4.mp4'
 				},
 				{
 					id : 2,
 					name: 'Summary',
-					video: './videos/2.mp4'
+					video: '2.mp4'
 				}]
 			},
 			{

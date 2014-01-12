@@ -18,6 +18,7 @@
 				$login.show();
 				$landing.hide();
 				$module.hide();
+				$video.hide();
 				
 				//swapPages($listings, $index);
 			}
@@ -28,6 +29,7 @@
 				$login.hide();
 				$landing.show();
 				$module.hide();
+				$video.hide();
 				
 				//swapPages($listings, $index);
 			}
