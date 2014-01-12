@@ -814,6 +814,12 @@ pre code {
   }
 }
 
+@media (min-width: 962px) {
+  .container {
+    width: 950px;
+  }
+}
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
