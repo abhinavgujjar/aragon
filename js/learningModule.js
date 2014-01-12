@@ -12,7 +12,7 @@
 		selectVideo: function(subTopic){
 			var vp = $('#upVid')[0];
 			var vpSource = $('#upVid source')[0];
-			vpSource.src = 'file:///sdcard/Movies/quest' + subTopic.video;
+			vpSource.src = 'file:///sdcard/Movies/quest/' + subTopic.video;
 			vp.load();
 			vp.play();
 		}
