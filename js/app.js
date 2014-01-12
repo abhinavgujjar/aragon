@@ -21,6 +21,7 @@
 		
 		if (window.index) index.init();
 		if (window.router) router.init();
+		if (window.landing) landing.init();
 
 		$('.back-button').on('click', function () {
 			window.history.go(-1);

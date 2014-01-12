@@ -6,38 +6,45 @@
 	router.app = Sammy('body', function () {
 
 		var that = this;
-		var $main = $('#main-page');
+		var $landing = $('#landing-page');
 		var $login = $('#login-page');
+		var $module = $('#module-page');
 
-		function swapPages(oldPage, newPage) {
-			newPage.show();
-
-			oldPage.hide('fast', function () {
-				newPage.show('fast');
-			});
-		}
-
-		var routes = [{
+		var routes = [
+		{
 			path: '#/',
 			callback: function (i) {
 				$login.show();
-				$main.hide();
+				$landing.hide();
+				$module.hide();
 				
 				//swapPages($listings, $index);
 			}
 		},
 		{
-			path: '#/main',
+			path: '#/landing',
 			callback: function (i) {
 				$login.hide();
-				$main.show();
+				$landing.show();
+				$module.hide();
 				
-
-				//clean out the app div
-				//$('#appContainer').empty();
-				//swapPages($index, $listings);
+				//swapPages($listings, $index);
 			}
-		}];
+		},
+		{
+			path: '#/module/:groupId/:moduleId',
+			callback: function (i) {
+				$login.hide();
+				$landing.hide();
+				$module.show();
+
+				var groupId = this.params.groupId;
+				var moduleId = this.params.moduleId;
+
+				//swapPages($listings, $app);
+			}
+		},
+		];
 
 		$.each(routes, function (i, r) {
 			that.get(r.path, r.callback);
@@ -48,8 +55,8 @@
 		router.app._checkFormSubmission = function () {
 			return false;
 		};
-    
-		router.app.run("#/");
+
+		router.app.run('#/');
 	};
 
 })(window.router = window.router || {}, $);
