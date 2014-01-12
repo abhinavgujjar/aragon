@@ -19,114 +19,83 @@
 
 <body>
 	<div class='container-full'>
-
-		<section id="login-page" style="display:block">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<img src="./img/welcome.jpg">
+		<div class="container">
+			<div class="row" id="login-page">
+				<div class="col-md-3">
+					<img src="./img/welcome.jpg">
+				</div>
+				<div class="col-md-9">
+					<div>
+						<h1>Welcome! Please sign in</h1>
 					</div>
-					<div class="col-md-9">
-						<div>
-							<h1>Welcome! Please sign in</h1>
-						</div>
-						<div>
-							<form class="form-inline" role="form">
-								<div class="form-group">
-									<label class="sr-only" for="exampleInputEmail2">Email address</label>
-									<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-								</div>
-								<div class="form-group">
-									<label class="sr-only" for="exampleInputPassword2">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-								</div>
-								<a href="#/landing" class="btn btn-primary btn-large">Sign In»</a>
-							</form>
-						</div>
-					</div><!--/span-->
-				</div><!--/row-->
+					<div>
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label class="sr-only" for="exampleInputEmail2">Email address</label>
+								<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+							</div>
+							<div class="form-group">
+								<label class="sr-only" for="exampleInputPassword2">Password</label>
+								<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+							</div>
+							<a href="#/landing" class="btn btn-primary btn-large">Sign In»</a>
+						</form>
+					</div>
+				</div><!--/span-->
 			</div>
-		</section>
 
-		<section id="landing-page" style="display:none">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6">
-						<div><h3 data-bind="text: groups[0].group"></h3></div>
-						<div class="list-group" data-bind="foreach: groups[0].modules" >
-							<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/1/' + id}"></a>
-						</div>
-						<div>
-							<hr/>
-						</div>
-						<div><h3 data-bind="text: groups[1].group"></h3></div>
-						<div class="list-group" data-bind="foreach: groups[1].modules" >
-							<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/2/' + id}"></a>
-						</div>
+			<div class="row" id="landing-page" style="display:none">
+				<div class="col-md-6 col-sm-6">
+					<div><h3 data-bind="text: groups[0].group"></h3></div>
+					<div class="list-group" data-bind="foreach: groups[0].modules" >
+						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/1/' + id}"></a>
 					</div>
-					<div class="col-md-6 col-sm-6">
-						<div><h3 data-bind="text: groups[2].group"></h3></div>
-						<div class="list-group" data-bind="foreach: groups[2].modules" >
-							<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/3/' + id}"></a>
-						</div>
-						<div>
-							<hr/>
-						</div>
-						<div><h3 data-bind="text: groups[3].group"></h3></div>
-						<div class="list-group" data-bind="foreach: groups[3].modules" >
-							<a href="#/video" class="list-group-item" data-bind="text: title"></a>
-						</div>
+					<div>
+						<hr/>
+					</div>
+					<div><h3 data-bind="text: groups[1].group"></h3></div>
+					<div class="list-group" data-bind="foreach: groups[1].modules" >
+						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/2/' + id}"></a>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div><h3 data-bind="text: groups[2].group"></h3></div>
+					<div class="list-group" data-bind="foreach: groups[2].modules" >
+						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/3/' + id}"></a>
+					</div>
+					<div>
+						<hr/>
+					</div>
+					<div><h3 data-bind="text: groups[3].group"></h3></div>
+					<div class="list-group" data-bind="foreach: groups[3].modules" >
+						<a href="#/video" class="list-group-item" data-bind="text: title"></a>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<section id="video-page" style="display:none">
-			<div class="container">
-				<div class="row">
-					<video id="upVid1" width="800" height="400" controls="controls">
+			<div class="row" id="video-page" style="display:none">
+				<video id="upVid1" width="800" height="400" controls="controls">
+					<source src="file:///sdcard/Movies/quest/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+				</video>
+			</div>
+
+			<div class="row" id="module-page" style="display:none">
+				<div class="col-md-3 col-sm-3">
+					<div  data-bind="foreach: module().topics">
+						<div data-bind="text:name"></div>
+						<div class="list-group" data-bind="foreach: subTopics" >
+							<a href="#" class="list-group-item" data-bind="text: name, click: $root.selectVideo"></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<video id="upVid" width="800" height="400" controls="controls">
 						<source src="file:///sdcard/Movies/quest/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 					</video>
 				</div>
 			</div>
-		</section>
-
-		<section id="module-page" style="display:none">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 col-sm-3">
-						<div  data-bind="foreach: module().topics">
-							<div data-bind="text:name"></div>
-							<div class="list-group" data-bind="foreach: subTopics" >
-								<a href="#" class="list-group-item" data-bind="text: name, click: $root.selectVideo"></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-sm-6">
-						<video id="upVid" width="800" height="400" controls="controls">
-							<source src="file:///sdcard/Movies/quest/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-						</video>
-					</div>
-				</div>
-			</div>
-		</section>
-
+		</div>  	
 	</div>
-
-
-	<script src="./Bootstrap/jquery.js"></script>
-	<script src="./Bootstrap/bootstrap-transition.js"></script>
-	<script src="./Bootstrap/bootstrap-alert.js"></script>
-	<script src="./Bootstrap/bootstrap-modal.js"></script>
-	<script src="./Bootstrap/bootstrap-dropdown.js"></script>
-	<script src="./Bootstrap/bootstrap-scrollspy.js"></script>
-	<script src="./Bootstrap/bootstrap-tab.js"></script>
-	<script src="./Bootstrap/bootstrap-tooltip.js"></script>
-	<script src="./Bootstrap/bootstrap-popover.js"></script>
-	<script src="./Bootstrap/bootstrap-button.js"></script>
-	<script src="./Bootstrap/bootstrap-collapse.js"></script>
-	<script src="./Bootstrap/bootstrap-carousel.js"></script>
-	<script src="./Bootstrap/bootstrap-typeahead.js"></script>
 	<script src="phonegap.js"></script>
 	<script src="js/vendor/jquery-2.0.0b2.min.js"></script>
 	<script src="js/vendor/knockout-2.2.1.js"></script>
