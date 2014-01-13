@@ -2,7 +2,7 @@
 <html lang="en">
 <script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Bootstrap, from Twitter</title>
+<title>Quest</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -21,7 +21,7 @@
 
 <body>
 	<div class='container-full'>
-		<nav class="navbar navbar-inverse  navbar-default" style="border-radius: 0px;" role="navigation">
+		<nav class="navbar navbar-inverse  navbar-default" style="border-radius: 0px; margin-bottom: 5px;" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -47,11 +47,11 @@
 		<div class="container">
 			
 
-			<div class="row" id="login-page">
-				<div class="col-md-6 col-sm-6">
-					<img src="./img/welcome.jpg">
+			<div class="row" id="login-page" >
+				<div class="col-md-3 col-sm-5">
+					<img src="./img/BigLogo1.png" width="">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-9 col-sm-6">
 					<div>
 						<h1>Welcome! </h1>
 					</div>
@@ -71,27 +71,27 @@
 
 			<div class="row" id="landing-page" style="display:none">
 				<div class="col-md-6 col-sm-6">
-					<div><h3 data-bind="text: groups[0].group"></h3></div>
+					<div><h4 data-bind="text: groups[0].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[0].modules" >
 						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/1/' + id}"></a>
 					</div>
 					<div>
 						<hr/>
 					</div>
-					<div><h3 data-bind="text: groups[1].group"></h3></div>
+					<div><h4 data-bind="text: groups[1].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[1].modules" >
 						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/2/' + id}"></a>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div><h3 data-bind="text: groups[2].group"></h3></div>
+					<div><h4 data-bind="text: groups[2].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[2].modules" >
 						<a href="#" class="list-group-item" data-bind="text: title, attr: {href: '#/module/3/' + id}"></a>
 					</div>
 					<div>
 						<hr/>
 					</div>
-					<div><h3 data-bind="text: groups[3].group"></h3></div>
+					<div><h4 data-bind="text: groups[3].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[3].modules" >
 						<a href="#/video" class="list-group-item" data-bind="text: title"></a>
 					</div>
