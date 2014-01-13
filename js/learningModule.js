@@ -28,6 +28,10 @@
 		})[0];
 
 		learningModule.vm.module(module);
+
+		//find the first video to play in the module
+		learningModule.vm.selectVideo(module.topics[0].subTopics[0]);
+
 	};
 
 	learningModule.init = function () {
