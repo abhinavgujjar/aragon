@@ -110,7 +110,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading" data-bind="text:name">Panel heading</div>
 							<div class="list-group" data-bind="foreach: subTopics" >
-								<a href="#" class="list-group-item" data-bind="text: name, click: $root.selectVideo"></a>
+								<a href="#" class="list-group-item" data-bind="text: name, click: $root.selectVideo, css: { active : $root.selectedSubTopic() === $data}"></a>
 							</div>
 						</div>
 					</div>

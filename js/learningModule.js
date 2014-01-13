@@ -9,7 +9,11 @@
 	learningModule.vm = {
 		module : ko.observable(''),
 		videoLink : ko.observable(''),
+		selectedSubTopic : ko.observable(''),
 		selectVideo: function(subTopic){
+
+			learningModule.vm.selectedSubTopic(subTopic);
+
 			var vp = $('#upVid')[0];
 			var vpSource = $('#upVid source')[0];
 			vpSource.src = 'file:///sdcard/Movies/quest/' + subTopic.video;
