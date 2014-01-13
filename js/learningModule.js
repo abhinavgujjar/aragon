@@ -5,7 +5,9 @@
 (function (learningModule, $) {
 	'use strict';
 
-	
+	var browserPrefix = './videos/';
+	var phonePrefix = 'file:///sdcard/Movies/quest/';
+
 	learningModule.vm = {
 		module : ko.observable(''),
 		videoLink : ko.observable(''),
@@ -16,7 +18,13 @@
 
 			var vp = $('#upVid')[0];
 			var vpSource = $('#upVid source')[0];
-			vpSource.src = 'file:///sdcard/Movies/quest/' + subTopic.video;
+
+			var prefix = browserPrefix;
+			if ( window.cordova ){
+				prefix = phonePrefix;
+			}
+
+			vpSource.src = prefix + subTopic.video;
 			vp.load();
 			vp.play();
 		}
