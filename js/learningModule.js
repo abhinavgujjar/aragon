@@ -12,6 +12,14 @@
 		module : ko.observable(''),
 		videoLink : ko.observable(''),
 		selectedSubTopic : ko.observable(''),
+		pause: function(){
+			var vp = $('#upVid')[0];
+			vp.pause();			
+		},
+		play: function(){
+			var vp = $('#upVid')[0];
+			vp.play();			
+		},
 		selectVideo: function(subTopic){
 
 			learningModule.vm.selectedSubTopic(subTopic);

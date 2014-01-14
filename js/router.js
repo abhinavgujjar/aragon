@@ -9,7 +9,6 @@
 		var $landing = $('#landing-page');
 		var $login = $('#login-page');
 		var $module = $('#module-page');
-		var $video = $('#video-page');
 
 		var routes = [
 		{
@@ -18,9 +17,8 @@
 				$login.show();
 				$landing.hide();
 				$module.hide();
-				$video.hide();
 				
-				//swapPages($listings, $index);
+				learningModule.vm.pause();
 			}
 		},
 		{
@@ -29,19 +27,8 @@
 				$login.hide();
 				$landing.show();
 				$module.hide();
-				$video.hide();
-				
-				//swapPages($listings, $index);
-			}
-		},
-		{
-			path: '#/video',
-			callback: function (i) {
-				$login.hide();
-				$landing.hide();
-				$video.show();
-				
-				//swapPages($listings, $index);
+
+				learningModule.vm.pause();
 			}
 		},
 		{
