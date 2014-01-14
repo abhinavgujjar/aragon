@@ -19,6 +19,7 @@
 				$module.hide();
 				
 				learningModule.vm.pause();
+				
 			}
 		},
 		{
