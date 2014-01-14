@@ -17,27 +17,27 @@
 				{
 					id : 1,
 					name: 'Introduction',
-					video: '1.mp4'
+					video: '1_I&B_Intro.mp4'
 				},
 				{
 					id : 2,
 					name: 'Terminologies',
-					video: '2.mp4'
+					video: '2_I&B_Intro_2.mp4'
 				},
 				{
-					id : 2,
+					id : 3,
 					name: 'Activities',
-					video: '3.mp4'
+					video: '3_I&B_groundrules.mp4'
 				},
 				{
-					id : 2,
+					id : 4,
 					name: 'A Discussion',
-					video: '4.mp4'
+					video: '4_I&B_energizer.mp4'
 				},
 				{
-					id : 2,
+					id : 5,
 					name: 'Summary',
-					video: '2.mp4'
+					video: '5_I&B_objectives.mp4'
 				}]
 			},
 			{
