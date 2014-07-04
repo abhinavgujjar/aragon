@@ -91,7 +91,7 @@
 					</div>
 					<div><h4 data-bind="text: groups[3].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[3].modules" >
-						<a href="#/video" class="list-group-item" data-bind="text: title"></a>
+						<a href="#/video" class="list-group-item" data-bind="text: title, attr: {href: '#/module/4/' + id}"></a>
 					</div>
 				</div>
 			</div>
