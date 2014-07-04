@@ -1151,7 +1151,7 @@
 	},
 	{
 		groupId: 4,
-		group: 'Group IV - Getting Ready for Work',
+		group: 'Group IV-Getting Ready for Work',
 		modules: [
 		{
 			id: 1,
