@@ -3,6 +3,7 @@
         xmlns:gap="http://phonegap.com/ns/1.0"
         id="com.aragon.quest"
         version="1.0.0">
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <name>Aragon</name>
 
   <description>
@@ -13,6 +14,11 @@
           email="abhinavgujjar@gmail.com">
     Rubik Square.
   </author>
+  
+  <!--Include file api-->
+  <gap:plugin name="org.apache.cordova.file" version="1.0.1" />
+  <plugin name="File" value="org.apache.cordova.FileUtils" />
+  <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
 
   <plugin name="Media" value="CDVSound" />
 
