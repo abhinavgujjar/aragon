@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
+	
+	
 <style type="text/css">
 	.container-full {
 		margin: 0 auto;
@@ -54,14 +56,14 @@
 						<h1>Welcome! </h1>
 					</div>
 					<div>
-						<form class="form" role="form">
+						<form name = "loginForm" class="form" role="form">
 							<div class="form-group">
 								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 							</div>
-							<a href="#/landing" class="btn btn-primary btn-lg btn-block">Sign In»</a>
+							<a onClick="LoginClick()" class="btn btn-primary btn-lg btn-block">Sign In»</a>
 						</form>
 					</div>
 				</div><!--/span-->
@@ -140,6 +142,7 @@
 <script src="js/router.js"></script>
 <script src="js/landing.js"></script>
 <script src="js/learningModule.js"></script>
+<script src="js/tracking.js"></script>
 
 
 </body>
