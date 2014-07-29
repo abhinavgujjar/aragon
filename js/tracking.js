@@ -30,7 +30,7 @@ function readFile() {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("/sdcard/track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
