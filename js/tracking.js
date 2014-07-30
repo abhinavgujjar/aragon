@@ -42,8 +42,17 @@ function readFile() {
         console.log("write success");
     };
     var username = document.loginForm.exampleInputEmail1.value;
+    var currentTime = new Date()
+    var month = currentTime.getMonth() + 1
+    var day = currentTime.getDate()
+    var year = currentTime.getFullYear()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10){
+    minutes = "0" + minutes
+     }
     writer.seek(writer.length);
-    writer.write(username+","+new Date().toString() + "\n");
+    writer.write(username+","+month + "/" + day + "/" + year +","+hours + ":" + minutes+"\n");
     writer.abort();
     };
 
