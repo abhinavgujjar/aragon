@@ -23,14 +23,14 @@ function readFile() {
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // Cordova is ready
+    // device APIs are available
     //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("/sdcard/track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -40,7 +40,7 @@ function readFile() {
     function gotFileWriter(writer) {
         writer.onwriteend = function(evt) {
             console.log("contents of file now 'some sample text'");
-            writer.truncate(11);  
+            writer.truncate(11);
             writer.onwriteend = function(evt) {
                 console.log("contents of file now 'some sample'");
                 writer.seek(4);
@@ -50,11 +50,7 @@ function readFile() {
                 }
             };
         };
-        var currentTime=new Date();
-        var uusername = document.loginForm.exampleInputEmail1.value;
-        var password = document.loginForm.exampleInputPassword1.value;
-        writer.write("Hi its working");
-        writer.newLine();
+        writer.write("some sample text");
     }
 
     function fail(error) {
