@@ -148,7 +148,9 @@
 
 function onDeviceReady(){
     document.addEventListener("backbutton", function(e){
-       if($.mobile.activePage.is('#landing-page')){
+       if($.mobile.activePage.is('#main-page')){
+	var loginStatus="Logged Out";
+	loginTrack(loginStatus);
            e.preventDefault();
            navigator.app.exitApp();
        }
