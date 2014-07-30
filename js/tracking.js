@@ -52,7 +52,7 @@ function readFile() {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(username+","+month + "/" + day + "/" + year +","+hours + ":" + minutes+"\n");
+    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"Logged In"+"\n");
     writer.abort();
     };
 
