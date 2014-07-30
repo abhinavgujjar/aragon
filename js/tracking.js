@@ -19,42 +19,44 @@ if (un=="quest") {
 }
 
 function readFile() {
-// Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+    //request the persistent file system
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onError);
+    
+}
 
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("Track Record.txt", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
+function init() {
+    document.addEventListener("deviceready", onDeviceReady, true);
+}
+function onFSSuccess(fs) {
+    fileSystem = fs;
 
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
+    getById("#dirListingButton").addEventListener("touchstart",doDirectoryListing);            
+    getById("#addFileButton").addEventListener("touchstart",doAppendFile);            
+    getById("#readFileButton").addEventListener("touchstart",doReadFile);            
+    getById("#metadataFileButton").addEventListener("touchstart",doMetadataFile);            
+    getById("#deleteFileButton").addEventListener("touchstart",doDeleteFile);            
+    
+    logit( "Got the file system: "+fileSystem.name +"<br/>" +
+                                    "root entry name is "+fileSystem.root.name + "<p/>")    
 
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-            console.log("contents of file now 'some sample text'");
-            writer.truncate(11);
-            writer.onwriteend = function(evt) {
-                console.log("contents of file now 'some sample'");
-                writer.seek(4);
-                writer.write(" different text");
-                writer.onwriteend = function(evt){
-                    console.log("contents of file now 'some different text'");
-                }
-            };
-        };
-        writer.seek(writer.length);
-        writer.write("some sample text");
-    }
+    doDirectoryListing();
+}
+function appendFile(f) {
 
-    function fail(error) {
-        console.log(error.code);
-    }
+    f.createWriter(function(writerOb) {
+        writerOb.onwrite=function() {
+            logit("Done writing to file.<p/>");
+        }
+        //go to the end of the file...
+        writerOb.seek(writerOb.length);
+        writerOb.write("Test at "+new Date().toString() + "\n");
+    })
+
+}
+
+function doAppendFile(e) {
+    fileSystem.root.getFile("test.txt", {create:true}, appendFile, onError);
+}
 }
