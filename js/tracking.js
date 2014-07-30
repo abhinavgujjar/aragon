@@ -26,24 +26,27 @@ function readFile() {
     // device APIs are available
     //
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, doAppendFile, fail);
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
-    function doAppendFile(fileSystem) {
-    fileSystem.root.getFile("test.txt", {create:true}, appendFile, onError);
-}
 
-function appendFile(f) {
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
 
-    f.createWriter(function(writerOb) {
-        writerOb.onwrite=function() {
-            logit("Done writing to file.<p/>");
-        }
-        //go to the end of the file...
-        writerOb.seek(writerOb.length);
-        writerOb.write("Test at "+new Date().toString() + "\n");
-    })
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
 
-}
+    function gotFileWriter(writer) {
+        writer.onwrite = function(evt) {
+        console.log("write success");
+    };
+    writer.write("some sample text");
+    writer.abort();
+    };
 
+    function fail(error) {
+        console.log(error.code);
+    }
 
 }
