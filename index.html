@@ -144,6 +144,9 @@
 <script src="js/landing.js"></script>
 <script src="js/learningModule.js"></script>
 <script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
 	document.addEventListener("backbutton", function() {
             if ( $('.ui-page-active').attr('id') == 'login-page') {
                 exitAppPopup();
@@ -163,6 +166,7 @@
         , 'No,Yes'
     );  
     return false;
+}
 }
 </script>
 
