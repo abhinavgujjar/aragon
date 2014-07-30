@@ -41,8 +41,9 @@ function readFile() {
         writer.onwrite = function(evt) {
         console.log("write success");
     };
+    var username = document.loginForm.exampleInputEmail1.value;
     writer.seek(writer.length);
-    writer.write("some sample text");
+    writer.write(username+","+new Date().toString() + "\n");
     writer.abort();
     };
 
