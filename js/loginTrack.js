@@ -1,5 +1,24 @@
+// Note: Like all Javascript password scripts, this is hopelessly insecure as the user can see 
+//the valid usernames/passwords and the redirect url simply with View Source.  
+// And the user can obtain another three tries simply by refreshing the page.  
+//So do not use for anything serious!
 
-function tracking() {
+
+function LoginClick() {
+var un = document.loginForm.exampleInputEmail1.value;
+var pw = document.loginForm.exampleInputPassword1.value;
+if (un=="quest") {
+    if(pw=="123"){
+       location.href = '#/landing';
+       loginTrack();
+    }
+    else{
+        alert("Invalid login!");
+    }
+}
+}
+
+function loginTrack() {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
