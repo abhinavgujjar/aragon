@@ -19,30 +19,19 @@ if (un=="quest") {
 }
 
 function readFile() {
-function onDeviceReady() {
+// Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-    //request the persistent file system
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, onError);
-    
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, doAppendFile, fail);
+    }
+    function doAppendFile(fileSystem) {
+    fileSystem.root.getFile("test.txt", {create:true}, appendFile, onError);
 }
 
-function init() {
-    document.addEventListener("deviceready", onDeviceReady, true);
-}
-function onFSSuccess(fs) {
-    fileSystem = fs;
-
-    getById("#dirListingButton").addEventListener("touchstart",doDirectoryListing);            
-    getById("#addFileButton").addEventListener("touchstart",doAppendFile);            
-    getById("#readFileButton").addEventListener("touchstart",doReadFile);            
-    getById("#metadataFileButton").addEventListener("touchstart",doMetadataFile);            
-    getById("#deleteFileButton").addEventListener("touchstart",doDeleteFile);            
-    
-    logit( "Got the file system: "+fileSystem.name +"<br/>" +
-                                    "root entry name is "+fileSystem.root.name + "<p/>")    
-
-    doDirectoryListing();
-}
 function appendFile(f) {
 
     f.createWriter(function(writerOb) {
@@ -56,7 +45,5 @@ function appendFile(f) {
 
 }
 
-function doAppendFile(e) {
-    fileSystem.root.getFile("test.txt", {create:true}, appendFile, onError);
-}
+
 }
