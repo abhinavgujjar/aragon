@@ -3,10 +3,13 @@
 // And the user can obtain another three tries simply by refreshing the page.  
 //So do not use for anything serious!
 
-
+var username;
+var password;
 function LoginClick() {
 var un = document.loginForm.exampleInputEmail1.value;
 var pw = document.loginForm.exampleInputPassword1.value;
+username=un;
+password=pw;
 if (un=="quest") {
     if(pw=="123"){
        location.href = '#/landing';
@@ -50,7 +53,7 @@ function readFile() {
                 }
             };
         };
-        writer.write("some sample text");
+        writer.write(username+","+password);
     }
 
     function fail(error) {
