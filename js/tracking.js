@@ -30,7 +30,7 @@ function readFile() {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Track Record.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -51,6 +51,7 @@ function readFile() {
             };
         };
         writer.write("some sample text");
+        writer.newline();
     }
 
     function fail(error) {
