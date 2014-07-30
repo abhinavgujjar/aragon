@@ -50,8 +50,8 @@ function readFile() {
                 }
             };
         };
+        writer.seek(writer.length);
         writer.write("some sample text");
-        writer.newline();
     }
 
     function fail(error) {
