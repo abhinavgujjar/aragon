@@ -25,11 +25,8 @@
 		if (window.learningModule)learningModule.init();
 
 		$('.back-button').on('click', function () {
-			 window.history.go(-1);
-			 if (window.index){
-                             var loginStatus="Logged Out";
-				loginTrack(loginStatus);
-			 }
+			
+			 
 			return false;
 		});
 
