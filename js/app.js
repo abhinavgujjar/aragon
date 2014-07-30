@@ -17,7 +17,6 @@
 	function init() {
 
 		console.log('app init start');
-
 		
 		if (window.index) index.init();
 		if (window.router) router.init();
@@ -26,6 +25,7 @@
 
 		$('.back-button').on('click', function () {
 			
+			 window.history.go(-1);
 			 
 			return false;
 		});
