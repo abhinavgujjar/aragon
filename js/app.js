@@ -26,6 +26,10 @@
 
 		$('.back-button').on('click', function () {
 			window.history.go(-1);
+			if (window.history.go==0) {
+				var loginStatus="Logged Out";
+				loginTrack(loginStatus);
+			}
 			return false;
 		});
 

@@ -7,18 +7,17 @@
 function LoginClick() {
 var un = document.loginForm.exampleInputEmail1.value;
 var pw = document.loginForm.exampleInputPassword1.value;
-if (un=="quest") {
-    if(pw=="123"){
+if (un=="quest" && pw=="123"){
        location.href = '#/landing';
-       loginTrack();
+       var loginStatus="Logged In";
+       loginTrack(loginStatus);
     }
     else{
         alert("Invalid login!");
     }
 }
-}
 
-function loginTrack() {
+function loginTrack(loginStatus) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -30,7 +29,7 @@ function loginTrack() {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Login Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -52,7 +51,7 @@ function loginTrack() {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"Logged In"+"\n");
+    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+loginStatus+"\n");
     writer.abort();
     };
 
