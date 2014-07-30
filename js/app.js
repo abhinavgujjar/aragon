@@ -25,11 +25,13 @@
 		if (window.learningModule)learningModule.init();
 
 		$('.back-button').on('click', function () {
-			window.history.go(-1);
-			if (window.history.go==0) {
-				var loginStatus="Logged Out";
+			if (document.referrer == "") {
+                             var loginStatus="Logged Out";
 				loginTrack(loginStatus);
-			}
+				window.close();
+                             } else {
+                                 window.history.go(-1);
+				                            }
 			return false;
 		});
 
