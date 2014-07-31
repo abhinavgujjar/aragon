@@ -166,10 +166,18 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	if(navigator.app){
-        navigator.app.exitApp();
-}else if(navigator.device){
-        navigator.device.exitApp();
+	if($.mobile.activePage.is('#'))
+	{
+	 if(navigator.app){
+          navigator.app.exitApp();
+            }else if(navigator.device){
+           navigator.device.exitApp();
+	    }
+}
+else
+{
+	navigator.app.backHistory();
+	navigator.device.backHistory();
 }
     }
 </script>
