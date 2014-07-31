@@ -1,5 +1,5 @@
 
-function tracking() {
+function trackingVideo(currTime) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -11,7 +11,7 @@ function tracking() {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Video Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -33,7 +33,7 @@ function tracking() {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"Logged In"+"\n");
+    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"Video"+"\n");
     writer.abort();
     };
 

@@ -28,7 +28,6 @@
 				$login.hide();
 				$landing.show();
 				$module.hide();
-
 				learningModule.vm.pause();
 			}
 		},
