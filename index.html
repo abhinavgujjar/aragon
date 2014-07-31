@@ -161,6 +161,7 @@
     function onDeviceReady() {
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, false);
+	document.addEventListener("pause", onPause, false);
     }
 
     // Handle the back button
@@ -170,6 +171,12 @@
 	loginTrack(loginStatus);
 	navigator.app.exitApp();	
     }
+    function onPause() {
+	var loginStatus="Logged Out";
+	loginTrack(loginStatus);
+	navigator.app.exitApp();	
+    }
+    
 </script>
 </body>
 </html>
