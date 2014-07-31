@@ -69,7 +69,7 @@
 				</div><!--/span-->
 			</div>
 
-			<div class="row" id="landing-page" data-role="page" style="display:none">
+			<div class="row" id="landing-page" style="display:none">
 				<div class="col-md-6 col-sm-6">
 					<div><h4 data-bind="text: groups[0].group"></h4></div>
 					<div class="list-group" data-bind="foreach: groups[0].modules" >
@@ -173,11 +173,6 @@
             }else if(navigator.device){
            navigator.device.exitApp();
 	    }
-}
-else
-{
-	navigator.device.backHistory();
-	history.go(-1);
 }
     }
 </script>
