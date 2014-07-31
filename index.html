@@ -166,7 +166,13 @@
     // Handle the back button
     //
     function onBackKeyDown() {
+	if (document.getElementById("login-page"))
+	{
+	navigator.app.exitApp();	
+	}
+	else{
 	navigator.app.backHistory();
+	}
     }
 </script>
 </body>
