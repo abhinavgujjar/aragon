@@ -177,6 +177,25 @@
 	navigator.app.exitApp();	
     }
     
+    //Video Control
+    
+   $scope.audio = document.getElementById("upVid");
+   $scope.audio.addEventListener('timeupdate', function(e){ 
+     $scope.duration = floatToTime(this.duration);
+     var currTime=$scope.duration;
+     trackingVideo(currTime);
+     $scope.$apply();
+     return;
+  })
+
+    function floatToTime( ms ){
+    var hr = (ms/3600) << 0,
+    min = (ms/60) << 0,
+    sec = (ms << 0) % 60;
+    return (hr >= 1 && ( hr + ':' )) + min + ':' + sec;
+
+ }
+    
 </script>
 </body>
 </html>
