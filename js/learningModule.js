@@ -24,9 +24,6 @@
 
 			learningModule.vm.selectedSubTopic(subTopic);
 			
-                        var currTime=vp.currentTime;
-			trackingVideo(currTime);
-			
 			var vp = $('#upVid')[0];
 			var vpSource = $('#upVid source')[0];
 
