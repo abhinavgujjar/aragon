@@ -168,7 +168,7 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	if(!document.getElementById('#/')){
+	if(!document.referrer == ""){
 	   alert(window.history.length)
 	   window.history.go(-1);
        }
