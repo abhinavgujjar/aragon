@@ -167,12 +167,12 @@
 
     // Handle the back button
     //
-    function onBackKeyDown() {
-	if(document.URL !="file:///android_asset/www/index.html#/landing" ){
-	   window.history.go(-1);
+    function onBackKeyDown() {	
+	if(document.URL =="file:///android_asset/www/index.html#/"){
+	   navigator.app.exitApp();
        }
-	else if (document.URL =="file:///android_asset/www/index.html#/") {
-		navigator.app.exitApp();
+	else if (document.URL !="file:///android_asset/www/index.html#/landing") {		
+		window.history.go(-1);
 	}
 	else
 	{
