@@ -38,6 +38,7 @@
 	};
 
 	learningModule.load = function(groupId, moduleId){
+		trackingPages(groupId,moduleId);
 		var group  = $.grep(toc.contents, function(item){
 			return item.groupId == groupId;
 		})[0];
