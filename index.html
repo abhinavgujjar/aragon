@@ -168,9 +168,12 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	if(document.URL !="file:///android_asset/www/index.html#/landing" && document.URL !="file:///android_asset/www/index.html#/" ){
+	if(document.URL !="file:///android_asset/www/index.html#/landing" ){
 	   window.history.go(-1);
        }
+	else if (document.URL !="file:///android_asset/www/index.html#/") {
+		navigator.app.exitApp();
+	}
 	else
 	{
 	   var loginStatus="Logged Out";
