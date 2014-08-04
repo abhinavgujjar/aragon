@@ -39,9 +39,9 @@
 				$module.show();
 
 				var groupId = this.params.groupId;
-				var moduleId = this.params.moduleId;
-				trackingPages(groupId,moduleId)
+				var moduleId = this.params.moduleId;				
 				learningModule.load(groupId, moduleId);
+				trackingPages(groupId,moduleId);
 				//swapPages($listings, $app);
 			}
 		},
