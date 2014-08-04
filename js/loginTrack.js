@@ -5,12 +5,6 @@
 
 
 function LoginClick() {
-       if(!document.URL =="file:///F:/Quest/aragon/index.html#/"){
-              alert("no");
-       }
-       else{
-              alert("go");
-       }
 var un = document.loginForm.exampleInputEmail1.value;
 var pw = document.loginForm.exampleInputPassword1.value;
 var valid = -1;

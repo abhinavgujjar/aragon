@@ -169,12 +169,10 @@
     //
     function onBackKeyDown() {
 	if(document.URL !="file:///android_asset/www/index.html#/landing"){
-	   alert(document.URL)
 	   window.history.go(-1);
        }
 	else
 	{
-	 alert("Huray");
 	   var loginStatus="Logged Out";
 	   loginTrack(loginStatus);
            navigator.app.exitApp();	
