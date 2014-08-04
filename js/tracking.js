@@ -3,6 +3,7 @@ function trackingPages(groupId,moduleId) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
+}
 
     // device APIs are available
     //
@@ -42,6 +43,3 @@ function trackingPages(groupId,moduleId) {
     }
 
     
-    
-
-}
