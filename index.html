@@ -168,8 +168,18 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-		navigator.app.backHistory();
+	if(!document.getElementById('#/')){
+           
+	   navigator.app.backHistory();
+       }
+	else
+	{
+	e.preventDefault();
+	   var loginStatus="Logged Out";
+	   loginTrack(loginStatus);
+           navigator.app.exitApp();	
 	}
+    }
     function onPause() {
 	var loginStatus="Logged Out";
 	loginTrack(loginStatus);
