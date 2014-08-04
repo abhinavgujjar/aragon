@@ -180,9 +180,14 @@
 	
     }
     function onPause() {
+	if(document.URL !="file:///android_asset/www/index.html#/"){
 	var loginStatus="Logged Out";
 	loginTrack(loginStatus);
-	navigator.app.exitApp();	
+	navigator.app.exitApp();
+	}
+	else{
+		navigator.app.exitApp();
+	}
     }
     
 </script>
