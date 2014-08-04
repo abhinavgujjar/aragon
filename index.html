@@ -47,7 +47,7 @@
 		<div class="container">
 			
 
-			<div class="row" id="login-page" >
+			<div id="login-page" class="row"  >
 				<div class="col-md-3 col-sm-5">
 					<img src="./img/BigLogo1.PNG" width="">
 				</div>
@@ -168,8 +168,8 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	if(!document.getElementById('#landing-page')){
-	   navigator.app.backHistory();
+	if(!document.getElementById('#/')){
+	   window.history.go(-1);
        }
 	else
 	{

@@ -24,7 +24,6 @@
 		if (window.learningModule)learningModule.init();
 
 		$('.back-button').on('click', function () {
-			
 			 window.history.go(-1);
 			 
 			return false;
