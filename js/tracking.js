@@ -22,7 +22,7 @@ function trackingPages(groupId,moduleId) {
         writer.onwrite = function(evt) {
         console.log("write success");
     };
-    var username = document.loginForm.exampleInputEmail1.value;
+    /*var username = document.loginForm.exampleInputEmail1.value;
     var currentTime = new Date()
     var month = currentTime.getMonth() + 1
     var day = currentTime.getDate()
@@ -31,9 +31,9 @@ function trackingPages(groupId,moduleId) {
     var minutes = currentTime.getMinutes()
     if (minutes < 10){
     minutes = "0" + minutes
-     }
+     }*/
     writer.seek(writer.length);
-    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+GroupId+","+ModuleId+"\n");
+    writer.write("Hello");
     writer.abort();
     };
 
