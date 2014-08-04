@@ -16,8 +16,7 @@
 			callback: function (i) {
 				$login.show();
 				$landing.hide();
-				$module.hide();
-				
+				$module.hide();				
 				learningModule.vm.pause();
 				
 			}

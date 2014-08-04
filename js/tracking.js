@@ -33,7 +33,7 @@ function trackingPages(groupId,moduleId) {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
+    writer.write(username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
     writer.abort();
     };
 

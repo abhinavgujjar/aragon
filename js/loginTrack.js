@@ -7,13 +7,24 @@
 function LoginClick() {
 var un = document.loginForm.exampleInputEmail1.value;
 var pw = document.loginForm.exampleInputPassword1.value;
-if (un=="quest" && pw=="123"){
+var valid = -1;
+
+var unArray = ["quest", "office", "office", "tom"];
+var pwArray = ["123", "123", "quest", "jerry"];
+
+for (var i=0; i <unArray.length; i++) {
+        if ((un == unArray[i]) && (pw == pwArray[i])) {
+            valid = i;
+            break;
+        }
+    }
+if (valid != -1){
        location.href = '#/landing';
        var loginStatus="Logged In";
        loginTrack(loginStatus);
     }
     else{
-        alert("Invalid login!");
+        alert("Invalid username or password!!");
     }
 }
 

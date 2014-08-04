@@ -168,9 +168,16 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	var loginStatus="Logged Out";
-	loginTrack(loginStatus);
-	navigator.app.exitApp();	
+	if($.mobile.activePage.is('#/')){
+           e.preventDefault();
+	   var loginStatus="Logged Out";
+	   loginTrack(loginStatus);
+           navigator.app.exitApp();
+       }
+	else
+	{
+		navigator.app.backHistory();
+	}
     }
     function onPause() {
 	var loginStatus="Logged Out";
