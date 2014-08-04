@@ -22,8 +22,7 @@
 		},
 		selectVideo: function(subTopic){
 
-			learningModule.vm.selectedSubTopic(subTopic);
-			
+			learningModule.vm.selectedSubTopic(subTopic);			
 			var vp = $('#upVid')[0];
 			var vpSource = $('#upVid source')[0];
 

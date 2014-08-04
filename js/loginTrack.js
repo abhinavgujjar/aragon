@@ -29,7 +29,7 @@ function loginTrack(loginStatus) {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Login Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Login Track.csv", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
