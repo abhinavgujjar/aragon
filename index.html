@@ -168,17 +168,17 @@
     // Handle the back button
     //
     function onBackKeyDown() {
-	if(!document.getElementById('#/')){
-           
-	   navigator.app.backHistory();
+	if(document.getElementById('#landing-page')){
+           alert("Huray");
+	   /*navigator.app.backHistory();
        }
 	else
 	{
-	e.preventDefault();
 	   var loginStatus="Logged Out";
 	   loginTrack(loginStatus);
-           navigator.app.exitApp();	
+           navigator.app.exitApp();	*/
 	}
+	
     }
     function onPause() {
 	var loginStatus="Logged Out";
