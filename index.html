@@ -173,14 +173,14 @@
        }
 	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
 		var moduleId=0;
-		var groupId=0;
-		trackingPages(groupId,moduleId);
-		window.history.go(-1);
 	}
 	else
 	{
 	   var loginStatus="Logged Out";
 	   loginTrack(loginStatus);
+	   var groupId=0;
+		trackingPages(groupId,moduleId);
+		window.history.go(-1);
            navigator.app.exitApp();	
 	}
 	
