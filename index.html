@@ -171,15 +171,12 @@
 	if(document.URL =="file:///android_asset/www/index.html#/"){
 	   navigator.app.exitApp();
        }
-       else if (document.URL =="file:///android_asset/www/index.html#/module/") {
+	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
 	   var moduleId=0;
 	   var groupId=0;
 	   var status="Out";
            trackingPages(groupId,moduleId,status);
 	   window.history.go(-1);
-	}
-	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
-		window.history.go(-1);
 	}
 	else
 	{
