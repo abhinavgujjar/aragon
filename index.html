@@ -171,6 +171,12 @@
 	if(document.URL =="file:///android_asset/www/index.html#/"){
 	   navigator.app.exitApp();
        }
+       else if (document.URL !="file:///android_asset/www/index.html#/module/") {
+	   var moduleId=0;
+	   var groupId=0;
+	   var status="In";
+           trackingPages(groupId,moduleId,status);
+	}
 	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
 		window.history.go(-1);
 	}
@@ -178,9 +184,6 @@
 	{
 	   var loginStatus="Logged Out";
 	   loginTrack(loginStatus);
-	   var moduleId=0;
-	   var groupId=0;
-           trackingPages(groupId,moduleId);
            navigator.app.exitApp();	
 	}
 	
@@ -191,7 +194,8 @@
 	loginTrack(loginStatus);
 	var moduleId=0;
 	var groupId=0;
-	trackingPages(groupId,moduleId);
+	var status ="Out"
+	trackingPages(groupId,moduleId,status);
 	navigator.app.exitApp();
 	}
 	else{

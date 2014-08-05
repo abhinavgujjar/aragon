@@ -1,5 +1,5 @@
 
-function trackingPages(groupId,moduleId) {
+function trackingPages(groupId,moduleId,status) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -33,7 +33,7 @@ function trackingPages(groupId,moduleId) {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
+    writer.write(username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+","+status+"\n");
     writer.abort();
     };
 
