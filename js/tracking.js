@@ -1,5 +1,5 @@
 
-function trackingPages(groupId,moduleId,status) {
+function trackingPages(groupId,moduleId,status,sessionId) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -11,7 +11,7 @@ function trackingPages(groupId,moduleId,status) {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Pages Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -33,7 +33,7 @@ function trackingPages(groupId,moduleId,status) {
     minutes = "0" + minutes
      }    
     writer.seek(writer.length);
-    writer.write(username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+","+status+"\n");
+    writer.write(sessionId+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+","+"\n");
     writer.abort();
     };
 

@@ -153,6 +153,8 @@
     // When Cordova is loaded and talking with the native device,
     // it will call the event `deviceready`.
     //
+    var d=new Date();
+    var sessionId=d.getTime();
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -175,25 +177,25 @@
 	   var moduleId=0;
 	   var groupId=0;
 	   var status="Out";
-           trackingPages(groupId,moduleId,status);
+           trackingPages(groupId,moduleId,status,sessionId);
 	   window.history.go(-1);
 	}
 	else
 	{
-	   var loginStatus="Logged Out";
-	   loginTrack(loginStatus);
+	   var loginStatus="Log Out";
+	   loginTrack(loginStatus,sessionId);
            navigator.app.exitApp();	
 	}
 	
     }
     function onPause() {
 	if(document.URL !="file:///android_asset/www/index.html#/"){
-	var loginStatus="Logged Out";
-	loginTrack(loginStatus);
+	var loginStatus="Log Out";
+	loginTrack(loginStatus,sessionId);
 	var moduleId=0;
 	var groupId=0;
 	var status ="Out"
-	trackingPages(groupId,moduleId,status);
+	trackingPages(groupId,moduleId,status,sessionId);
 	navigator.app.exitApp();
 	}
 	else{

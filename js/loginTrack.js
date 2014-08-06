@@ -20,7 +20,7 @@ for (var i=0; i <unArray.length; i++) {
     }
 if (valid != -1){
        location.href = '#/landing';
-       var loginStatus="Logged In";
+       var loginStatus="Login";
        loginTrack(loginStatus);
     }
     else{
@@ -28,7 +28,7 @@ if (valid != -1){
     }
 }
 
-function loginTrack(loginStatus) {
+function loginTrack(loginStatus,sessionId) {
 // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -40,7 +40,7 @@ function loginTrack(loginStatus) {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Login Track.csv", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Track.csv", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -62,7 +62,7 @@ function loginTrack(loginStatus) {
     minutes = "0" + minutes
      }     
     writer.seek(writer.length);
-    writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+loginStatus+"\n");
+    writer.write(sessionId+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+"\n");
     writer.abort();
     };
 
