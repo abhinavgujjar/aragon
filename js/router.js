@@ -39,7 +39,7 @@
 
 				var groupId = this.params.groupId;
 				var moduleId = this.params.moduleId;
-				var status="Login";
+				var status="Navigation In";
 				trackingPages(groupId,moduleId,status,sessionId);
 				learningModule.load(groupId, moduleId);
 				//swapPages($listings, $app);

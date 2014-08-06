@@ -176,7 +176,7 @@
 	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
 	   var moduleId=0;
 	   var groupId=0;
-	   var status="Out";
+	   var status="Navigation Out";
            trackingPages(groupId,moduleId,status,sessionId);
 	   window.history.go(-1);
 	}
@@ -194,7 +194,7 @@
 	loginTrack(loginStatus,sessionId);
 	var moduleId=0;
 	var groupId=0;
-	var status ="Out"
+	var status ="Navigation Out"
 	trackingPages(groupId,moduleId,status,sessionId);
 	navigator.app.exitApp();
 	}
