@@ -62,9 +62,7 @@ function loginTrack(loginStatus) {
     minutes = "0" + minutes
      }
      if (writer.length==0) {
-       writer.write("Username"+","+"Date"+","+"Time"+","+"Login Status"+"\n");
-       writer.seek(writer.length);
-       writer.write(username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+loginStatus+"\n");
+       writer.write("\n"+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+loginStatus+"\n");
        writer.abort();
      }
      else

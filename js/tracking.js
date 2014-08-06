@@ -32,9 +32,16 @@ function trackingPages(groupId,moduleId,status) {
     if (minutes < 10){
     minutes = "0" + minutes
      }
+     if (writer.length==0) {
+       writer.write("\n"+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+","+status+"\n");
+       writer.abort();
+     }
+     else
+     {
     writer.seek(writer.length);
     writer.write(username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+","+status+"\n");
     writer.abort();
+     }
     };
 
     function fail(error) {
