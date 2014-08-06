@@ -20,7 +20,7 @@ for (var i=0; i <unArray.length; i++) {
     }
 if (valid != -1){
        location.href = '#/landing';
-       var loginStatus="Login";
+       var loginStatus="Log In";
        loginTrack(loginStatus,sessionId);
     }
     else{
@@ -62,7 +62,7 @@ function loginTrack(loginStatus,sessionId) {
     minutes = "0" + minutes
      }     
     writer.seek(writer.length);
-    writer.write(sessionId+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+","+"\n");
+    writer.write(sessionId+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
     writer.abort();
     };
 
