@@ -21,7 +21,7 @@ for (var i=0; i <unArray.length; i++) {
 if (valid != -1){
        location.href = '#/landing';
        var loginStatus="Login";
-       loginTrack(loginStatus);
+       loginTrack(loginStatus,sessionId);
     }
     else{
         alert("Invalid username or password!!");

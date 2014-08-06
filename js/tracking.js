@@ -11,7 +11,7 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Track.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("Track.csv", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
