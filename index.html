@@ -154,7 +154,7 @@
     // it will call the event `deviceready`.
     //
     var d=new Date();
-    var sessionId=d.getTime();
+    var sessionId=d.getTime().toString();
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
