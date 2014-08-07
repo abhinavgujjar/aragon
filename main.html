@@ -165,7 +165,6 @@
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, false);
 	document.addEventListener("pause", onPause, false);
-	document.addEventListener("resume", onResume, false);
     }
 
     // Handle the back button
@@ -194,18 +193,14 @@
 	var moduleId=0;
 	var groupId=0;
 	var status ="Navigation Out";
-	trackingPages(groupId,moduleId,status,sessionId);
-	var loginStatus="Log Out";
+        var loginStatus="Log Out";
+	trackingPages(groupId,moduleId,status,sessionId);	
 	loginTrack(loginStatus,sessionId);
 	navigator.app.exitApp();
-	/*navigator.app.exitApp();
 	}
 	else{
-		navigator.app.exitApp();*/
+		navigator.app.exitApp();
 	}
-    }
-    function onResume() {
-	window.location="file:///android_asset/www/index.html#/";
     }
     
 </script>
