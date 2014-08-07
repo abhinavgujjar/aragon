@@ -170,10 +170,12 @@
     // Handle the back button
     //
     function onBackKeyDown() {	
-	if(document.URL =="file:///android_asset/www/index.html#/"){
+	if(document.URL =="file:///android_asset/www/index.html#/")
+	{
 	   navigator.app.exitApp();
-       }
-	else if (document.URL !="file:///android_asset/www/index.html#/landing") {
+        }
+	else if (document.URL !="file:///android_asset/www/index.html#/landing")
+	{
 	   var moduleId=0;
 	   var groupId=0;
 	   var status="Navigation Out";
@@ -185,23 +187,24 @@
 	   var loginStatus="Log Out";
 	   loginTrack(loginStatus,sessionId);
            navigator.app.exitApp();	
-	}
-	
+	}	
     }
-    function onPause() {
-	if(document.URL !="file:///android_asset/www/index.html#/"){
+    function onPause()
+    {
+	if(document.URL!="file:///android_asset/www/index.html#/"){
 	var moduleId=0;
 	var groupId=0;
 	var status ="Navigation Out";
-        var loginStatus="Log Out";
+	trackingPages(groupId,moduleId,status,sessionId);
+	var loginStatus="Log Out";
 	loginTrack(loginStatus,sessionId);
-	trackingPages(groupId,moduleId,status,sessionId);	
-	}
-	else{
+	navigator.app.exitApp();
+    }
+	else
+	{
 		navigator.app.exitApp();
 	}
-    }
-    
+     }    
 </script>
 </body>
 </html>

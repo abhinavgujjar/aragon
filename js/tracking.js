@@ -38,7 +38,7 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     };
 
     function fail(error) {
-        console.log(error.code);
+        alert(error.code);
     }
 }
 
