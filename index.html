@@ -192,11 +192,10 @@
     function onPause()
     {
 	if(document.URL!="file:///android_asset/www/index.html#/"){
-	//var moduleId=0;
-	//var groupId=0;
-	//var status ="Navigation Out";
-	//trackingPages(groupId,moduleId,status,sessionId);
-	onBackKeyDown();
+	var moduleId=0;
+	var groupId=0;
+	var status ="Navigation Out";
+	trackingPages(groupId,moduleId,status,sessionId);
 	var loginStatus="Log Out";
 	loginTrack(loginStatus,sessionId);
 	navigator.app.exitApp();
