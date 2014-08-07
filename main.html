@@ -193,11 +193,11 @@
 	if(document.URL !="file:///android_asset/www/main.html#/"){
 	var moduleId=0;
 	var groupId=0;
-	var status ="Navigation Out"
+	var status ="Navigation Out";
 	trackingPages(groupId,moduleId,status,sessionId);
 	var loginStatus="Log Out";
 	loginTrack(loginStatus,sessionId);
-	
+	navigator.app.exitApp();
 	/*navigator.app.exitApp();
 	}
 	else{
@@ -205,7 +205,7 @@
 	}
     }
     function onResume() {
-	window.location="file:///android_asset/www/main.html#/";
+	window.location="file:///android_asset/www/index.html#/";
     }
     
 </script>
