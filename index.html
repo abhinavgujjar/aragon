@@ -165,7 +165,6 @@
         // Register the event listener
         document.addEventListener("backbutton", onBackKeyDown, false);
 	document.addEventListener("pause", onPause, false);
-        document.addEventListener("resume", onResume, false);
     }
 
     // Handle the back button
@@ -195,8 +194,8 @@
 	var groupId=0;
 	var status ="Navigation Out";
         var loginStatus="Log Out";
-	trackingPages(groupId,moduleId,status,sessionId);	
 	loginTrack(loginStatus,sessionId);
+	trackingPages(groupId,moduleId,status,sessionId);	
 	navigator.app.exitApp();
 	}
 	else{
