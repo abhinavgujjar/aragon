@@ -64,7 +64,6 @@ function loginTrack(loginStatus,sessionId) {
     writer.seek(writer.length);
     alert(writer.length);
     writer.write(sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
-    writer.abort();
     };
 
     function fail(error) {
