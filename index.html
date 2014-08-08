@@ -139,6 +139,7 @@
 <script src="js/vendor/sammy.0.7.4.min.js"></script>
 <script src="js/loginTrack.js"></script>
 <script src="js/tracking.js"></script>
+<script src="js/exitTrack.js"></script>
 <script src="js/toc.js"></script>
 <script src="js/app.js"></script>
 <script src="js/router.js"></script>
@@ -194,10 +195,9 @@
 	if(document.URL!="file:///android_asset/www/index.html#/"){
 	var moduleId=0;
 	var groupId=0;
-	var status ="Navigation Out";
-	trackingPages(groupId,moduleId,status,sessionId);
+	var status ="Navigation Out";	
 	var loginStatus="Log Out";
-	loginTrack(loginStatus,sessionId);
+	exitTrack(loginStatus,groupId,moduleId,status,sessionId);
 	navigator.app.exitApp();
 	navigator.app.clearHistory();
     }
