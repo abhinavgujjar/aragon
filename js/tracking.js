@@ -29,9 +29,9 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     if (minutes < 10){
     minutes = "0" + minutes
      }
-    writer.abort();
     writer.seek(writer.length);
     writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
+    writer.abort();
     writer.onwriteend = function(evt) {
         console.log("Write Success")
     };

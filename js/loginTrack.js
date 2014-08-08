@@ -58,9 +58,9 @@ function loginTrack(loginStatus,sessionId) {
     if (minutes < 10){
     minutes = "0" + minutes
      }
-    writer.abort();
     writer.seek(writer.length);
     writer.write(sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
+    writer.abort();
     writer.onwriteend = function(evt) {
         console.log(writer.length);
     };
