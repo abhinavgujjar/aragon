@@ -19,8 +19,6 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     }
 
     function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-        console.log("write success");
     var username = document.loginForm.exampleInputEmail1.value;
     var currentTime = new Date()
     var month = currentTime.getMonth() + 1
@@ -34,7 +32,9 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     writer.seek(writer.length);
     alert(writer.length);
     writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
-    }
+    writer.onwriteend = function(evt) {
+        alert(writer.length);
+    };
     }
 
     function fail(error) {

@@ -48,8 +48,6 @@ function loginTrack(loginStatus,sessionId) {
     }
 
     function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-        console.log("write success");
     var username = document.loginForm.exampleInputEmail1.value;
     var currentTime = new Date()
     var month = currentTime.getMonth() + 1
@@ -62,7 +60,9 @@ function loginTrack(loginStatus,sessionId) {
      }     
     writer.seek(writer.length);
     writer.write(sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
-    }
+    writer.onwriteend = function(evt) {
+        alert(writer.length);
+    };
     }
 
     function fail(error) {
