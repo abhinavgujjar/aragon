@@ -28,17 +28,17 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     var minutes = currentTime.getMinutes()
     if (minutes < 10){
     minutes = "0" + minutes
-     }    
+     }
+    writer.abort();
     writer.seek(writer.length);
-    alert(writer.length);
     writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
     writer.onwriteend = function(evt) {
-        alert(writer.length);
+        console.log("Write Success")
     };
     }
 
     function fail(error) {
-        alert(error.code);
+        console.log(error.code);
     }
 }
 

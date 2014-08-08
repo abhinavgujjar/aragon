@@ -57,11 +57,12 @@ function loginTrack(loginStatus,sessionId) {
     var minutes = currentTime.getMinutes()
     if (minutes < 10){
     minutes = "0" + minutes
-     }     
+     }
+    writer.abort();
     writer.seek(writer.length);
     writer.write(sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
     writer.onwriteend = function(evt) {
-        alert(writer.length);
+        console.log(writer.length);
     };
     }
 
