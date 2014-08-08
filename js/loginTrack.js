@@ -62,7 +62,7 @@ function loginTrack(loginStatus,sessionId) {
      }     
     writer.seek(writer.length);
     writer.write(sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
-    };
+    }
     }
 
     function fail(error) {

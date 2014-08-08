@@ -34,7 +34,7 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     writer.seek(writer.length);
     alert(writer.length);
     writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
-    };
+    }
     }
 
     function fail(error) {
