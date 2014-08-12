@@ -30,7 +30,7 @@ function trackingPages(groupId,moduleId,status,sessionId) {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
+    writer.write(sessionId+"_"+username+","+status+","+username+","+month+ "/" +day+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n");
     writer.abort();
     writer.onwriteend = function(evt) {
         console.log("Write Success")

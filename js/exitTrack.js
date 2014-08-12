@@ -29,7 +29,7 @@ function exitTrack(loginStatus,groupId,moduleId,status,sessionId) {
     minutes = "0" + minutes
      }
     writer.seek(writer.length);
-    writer.write(sessionId+"_"+username+","+status+","+username+","+day+ "/" +month+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n"+sessionId+"_"+username+","+loginStatus+","+username+","+day + "/" +month+ "/" + year +","+hours + ":" + minutes+"\n");
+    writer.write(sessionId+"_"+username+","+status+","+username+","+month+ "/" +day+ "/" + year +","+hours + ":" + minutes+","+groupId+","+moduleId+"\n"+sessionId+"_"+username+","+loginStatus+","+username+","+month+ "/" +day+ "/" + year +","+hours + ":" + minutes+"\n");
     writer.abort();
     writer.onwriteend = function(evt) {
         console.log("Write Success")
